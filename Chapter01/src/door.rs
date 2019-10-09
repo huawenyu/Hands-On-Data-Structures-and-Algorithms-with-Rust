@@ -6,6 +6,10 @@ impl Door {
     fn new(is_open: bool) -> Door {
         Door { is_open: is_open }
     }
+
+    fn echo(& self) {
+        println!("state={:?}", self.is_open);
+    }
 }
 
 trait Openable {
@@ -24,9 +28,17 @@ mod tests {
     use super::*;
 
     #[test]
-    fn open_door() {
+    fn door_open() {
         let mut door = Door::new(false);
         door.open();
         assert!(door.is_open);
     }
 }
+
+fn main() {
+    let mut door = Door::new(false);
+    door.echo();
+    door.open();
+    door.echo();
+}
+

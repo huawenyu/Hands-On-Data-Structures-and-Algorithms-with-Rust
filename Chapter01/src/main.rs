@@ -1,10 +1,10 @@
-//! 
+//!
 //! This crate was created to support Hands on Algorithms and Data Structures With Rust!
-//! 
-//! Chapter 1  
+//!
+//! Chapter 1
 //!
 
-use std::thread; 
+use std::thread;
 use std::sync::{Mutex, Arc};
 use std::sync::mpsc::{channel, Sender, Receiver};
 use std::rc::Rc;
@@ -29,12 +29,12 @@ fn shared_state() {
     println!("{:?}", *v.lock().unwrap());
 }
 
-fn threading() { 
+fn threading() {
     let x = 10;
-    let handle = thread::spawn(move || { 
+    let handle = thread::spawn(move || {
         println!("Hello from a thread, the number is {}", x);
-    }); 
-    handle.join().unwrap(); 
+    });
+    handle.join().unwrap();
 }
 
 fn channels() {
@@ -43,19 +43,19 @@ fn channels() {
 
     let handles = (0..N).map(|i| {
         let _tx = tx.clone();
-        thread::spawn(move || { 
+        thread::spawn(move || {
             // don't use the result
-            let _ = _tx.send(i).unwrap(); 
+            let _ = _tx.send(i).unwrap();
         })
     });
     // close all threads
     for h in handles {
         h.join().unwrap();
     }
-    
+
     // receive N times
     let numbers: Vec<i32> = (0..N).map(|_| rx.recv().unwrap()).collect();
-    
+
     println!("{:?}", numbers);
 }
 
