@@ -1,11 +1,11 @@
-use std::thread; 
+use std::thread;
 
-fn threading() { 
+fn threading() {
     let x = 10;
-    let handle = thread::spawn(|| { 
+    let handle = thread::spawn(|| {
         println!("Hello from a thread, the number is ", x);
-    }); 
-    handle.join().unwrap(); 
+    });
+    handle.join().unwrap();
 }
 
 fn main() {
