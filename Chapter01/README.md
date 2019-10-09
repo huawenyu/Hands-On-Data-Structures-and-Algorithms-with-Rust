@@ -10,3 +10,9 @@
 
   $ cargo test -- --help        <=== Show help
   $ cargo test -- --test door
+
+# Detail
+
+## thread
+
+http://squidarth.com/rc/rust/2018/06/04/rust-concurrency.html
