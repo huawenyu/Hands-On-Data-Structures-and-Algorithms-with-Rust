@@ -18,7 +18,7 @@ http://seenaburns.com/vim-setup-for-rust/
 
              Compiling rustc-ap-rustc_errors v583.0.0
               error[E0046]: not all trait items implemented, missing: `mixed_site`
-                 --> /home/wilson/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-syntax-583.0.0/ext/proc_macro_server.rs:657:1
+                 --> ~/.cargo/registry/src/github.com-1ecc6299db9ec823/rustc-ap-syntax-583.0.0/ext/proc_macro_server.rs:657:1
                   |
               657 | impl server::Span for Rustc<'_> {
                   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ missing `mixed_site` in implementation
@@ -41,6 +41,13 @@ http://seenaburns.com/vim-setup-for-rust/
       add to vimrc:
       autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 
+# Howtos
+
+## Solve: `#![feature]` may not be used on the stable release channel
+
+    !!!$ rustup update nightly
+    !!!$ rustup toolchain add nightly
+    $ rustup override set nightly
 
 # Hands-On Data Structures and Algorithms with Rust
 
