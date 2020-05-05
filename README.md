@@ -1,8 +1,8 @@
 # vim - IDE
 
-https://about.okhin.fr/2018/08/03/my-vim-setup-with-some-rust-specifities/
-https://kadekillary.work/post/rust-ide/
-http://seenaburns.com/vim-setup-for-rust/
+https://about.okhin.fr/2018/08/03/my-vim-setup-with-some-rust-specifities/  
+https://kadekillary.work/post/rust-ide/  
+http://seenaburns.com/vim-setup-for-rust/  
 
     0. Add plugin 'neoclide/coc-rls' to vim, so the .vimrc like this:
 
